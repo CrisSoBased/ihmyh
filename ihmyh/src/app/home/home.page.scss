@@ -1,0 +1,26 @@
+ion-content {
+  --background: none;
+  background: url("../../assets/images/backgg.png") no-repeat fixed center;
+  background-size: cover;
+}
+
+.texto1 {
+  position: relative;
+  font-weight: bold;
+  top: 50%;
+  left: 30%;
+  transform: translateY(-180%);
+  font-size: 350%; /* Tamanho do texto aumentado */
+  color: #060825; /* Cor definida diretamente */
+}
+
+$cor-letra: #060825;
+.texto2 {
+  position: relative;
+  font-weight: bold;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-350%);
+  font-size: 200%; // Tamanho do texto aumentado
+  color: $cor-letra; // Cor definida pela variável
+}
