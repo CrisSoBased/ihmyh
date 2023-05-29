@@ -22,6 +22,6 @@ export class Login {
     }
 
     redirecionarParaPagina() {
-      this.router.navigate(['/carrinho']);
+      this.router.navigate(['/home']);
     }
 }

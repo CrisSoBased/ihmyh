@@ -10,7 +10,6 @@
   <div class="ion-text-center">
     <h1></h1>
     <div>
-      
       <mat-icon svgIcon="carrinho" class="carrinho" (click)="redirecionarParaPagina()"></mat-icon>
 
       <h2 class="aumentar-tamanho">Login</h2>
@@ -27,14 +26,14 @@
       </ion-item>
 
       <ion-button expand="round" class="shadow-red" color="primary">Entrar</ion-button>
-
     </div>
-    <div class="registo">
-      <a href="pagina-registo.html">Registar</a>
-    </div>   
+
+    <ion-router-link routerLink="/registo" routerDirection="forward" class="registo">
+      Registar
+    </ion-router-link>
+    
     <div class="recuperar">
       <a href="pagina-recuperar-password.html">Recuperar Password</a>
     </div>  
   </div>
-
 </ion-content>

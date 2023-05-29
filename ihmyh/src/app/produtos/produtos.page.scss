@@ -1,0 +1,20 @@
+ion-content {
+    --background: none;
+    background: url("../../assets/images/backgg.png") no-repeat fixed center/cover;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .button-container ion-button {
+    flex-basis: 45%; /* Ajuste o valor para definir a largura de cada botão */
+    margin-bottom: 12px; /* Adicione margem inferior para separar os botões */
+    top: 70%;
+    left: 50%;
+    transform: translateY(800%);
+  }
+  
