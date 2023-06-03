@@ -1,13 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <h2 class="texto1">Flores</h2>
-  <h2 class="texto2">são mais do que palavras</h2>
-</ion-content>
+  <script>
+    alert("cheho");
+    console.log("aqui");
+  </script>
+  <div id="fundo">
+     
+      <div id="menu"></div>
+  
+      <div id="logo"></div>
+        
+      <div id="corpo">
+          <h2>Login</h2>
+        
+          <ion-item>
+            <ion-input type="text" placeholder="Username" style="padding: 0 12px;"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input type="password"  placeholder="password" style="padding: 0 12px;"></ion-input> 
+          </ion-item>
+          
+          
 
+
+          <div class="largura">
+              <ion-button expand="round" class="shadow-red" color="primary" (click)="checkCredentials()">Entrar</ion-button>
+          </div>  
+  
+  
+          <div class="largura" style="margin-top:20px">
+              <div class="esquerda"><a href="registar">Registar</a></div>
+              <div class="direita"><a href="recuperar">Recuperar Password</a></div>
+            </div>        
+  
+      </div>
+  
+      <div id="rodape"></div>
+  
+  </div>
+  

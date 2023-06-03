@@ -5,17 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    MatIconModule,
-    HttpClientModule
+    HomePageRoutingModule
   ],
   declarations: [HomePage]
 })

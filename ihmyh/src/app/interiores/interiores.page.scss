@@ -1,0 +1,115 @@
+#fundo{
+    background: url("../../assets/images/backgg_v2.png") no-repeat fixed center;
+    background-size: cover;
+      width: 100%; 
+      height: 100vh;
+  }
+  #menu{
+      height: 15%;
+      position: relative;
+      display: block;
+  }
+  #logo{
+      height: 10%;
+      position: relative;
+      display: block;
+  }
+  #corpo{
+      height: 60%;
+      position: relative;
+      display: block;
+  }
+  #corpo h2{
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+      font-weight: bold;
+  }
+  
+  .item.item-input {
+    position: relative;
+    --background: #d9d9d9 !important;
+    color: black; /* Cor do texto quando flutuante */
+    padding: 10px 40px; /* Adiciona um espaçamento à direita */
+    --padding:0px !important;
+    --border-radius: 15px !important; 
+    --min-height: 32px !important;
+  
+  }
+  
+  
+  
+  ion-input {
+    position: relative;
+    --background: #d9d9d9 !important;
+    color: black; /* Cor do texto quando flutuante */
+    --border-radius: 15px !important; 
+    --min-height: 12px !important;
+    --inner-border-width: 0px !important;
+    margin: 0 30px 30px 30px;
+  }
+  
+  .item-label-floating .sc-ion-input-ios-h {
+    --padding-top: 0px !important; 
+    --padding-end: 0px !important; 
+    --padding-bottom: 0px !important; 
+    --padding-start: 0px !important; 
+  }
+  .label-floating.sc-ion-label-ios-h {
+      transform: none !important;
+      margin-top: 16px;
+  }
+  .ion-color-primary {
+      --ion-color-base: var(--ion-color-primary, #060825) !important;
+      --ion-color-base-rgb: var(--ion-color-primary-rgb, 56, 128, 255) !important;
+      --ion-color-contrast: var(--ion-color-primary-contrast, #fff) !important;
+      --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb, 255, 255, 255) !important;
+      --ion-color-shade: var(--ion-color-primary-shade, #060825) !important;
+      --ion-color-tint: var(--ion-color-primary-tint, #060825) !important;
+      --border-radius: 15px !important; 
+  }
+  .button-round{
+      width: 100% !important;
+      margin: 10px auto !important;
+      --ion-color-base: black !important;
+      font-size: 20px;
+  }
+  .largura{
+      display: block;
+      width: 100%;
+      padding: 10px 40px; 
+      text-align: center;
+  }
+  .esquerda{
+      display: block;
+      width: 50%;
+      float: left;
+      position: relative; 
+      text-align: left;
+  }
+  .direita{
+      display: block;
+      width: 50%;
+      float: right;
+      position: relative; 
+      text-align: center;
+  }
+  a {
+      color: #1b680d;
+      text-decoration: none;
+  }
+  a:hover {
+      color: rgb(199, 91, 2);
+  }
+  
+  .item-lines-default{
+  --background: none !important;
+  }
+  
+  
+  ion-item::part(native) {
+      padding-left: unset;
+      --inner-border-width: 0 !important;
+  
+    }

@@ -1,0 +1,64 @@
+
+  
+  <div id="fundo">
+     
+    <div id="menu"></div>
+
+    <div id="logo">
+      <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+      
+  </div>
+
+    <div id="corpo">
+      <ion-content>
+      <ion-list>
+        <ion-item *ngFor="let result of results">
+          <img [src]="'../assets/images/Screenshot_' + result + '.png'" alt="Imagem">
+          <ion-label>{{ result }}<ion-button expand="round" class="espbt" color="primary" >+</ion-button></ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-content>
+    </div>
+
+    <div id="rodape"><table style="width: 100%; margin-left: auto; margin-right: auto;" border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+      <tr>
+        
+          <td style="width: 20%; text-align: center;"><a href="carrinho"><img src="../assets/images/cesto.png" href="carrinho" alt="" width="80" height="80"></a></td>
+        
+           
+          <td style="width: 20%; text-align: center;"><a href="contactos"> <img src="../assets/images/contacto.png" alt="" width="80" height="80"></a></td>
+        
+        
+          <td style="width: 20%; text-align: center;"><a href="produtos"><img src="../assets/images/home.png" href="home" alt="" width="80" height="80"></a></td>
+        
+        
+          <td style="width: 20%; text-align: center;"><a href="informate"><img src="../assets/images/info.png" alt="" width="80" height="80"></a></td>
+      
+        
+          <td style="width: 20%; text-align: center;"><a href="conta"><img src="../assets/images/user.png" alt="" width="80" height="80"></a></td>
+        
+        </tr>
+      <tr>
+      
+          <td style="width: 20%; text-align: center;">cesto</td>
+      
+    
+          <td style="width: 20%; text-align: center;">contacto</td>
+       
+    
+          <td style="width: 20%; text-align: center;">In&iacute;cio</td>
+       
+      
+          <td style="width: 20%; text-align: center;">Info</td>
+      
+     
+          <td style="width: 20%; text-align: center;">Perfil</td>
+     
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
