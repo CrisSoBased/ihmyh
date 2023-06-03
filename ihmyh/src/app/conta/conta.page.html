@@ -7,18 +7,17 @@
   <div id="corpo">
       <h2>Conta</h2>
       <ion-list>
-      <ion-item>
-        <ion-input type="text" label="Nome:" placeholder="joao" style="padding: 0 12px;"></ion-input>
-      </ion-item>
-      
-      <ion-item>
-        <ion-input type="text" label="email"  placeholder="joao1234@gmail.com" style="padding: 0 12px;"></ion-input> 
-      </ion-item>
-
-      
+        <ion-item>
+          <ion-input type="text" label="Nome:" placeholder="credentials.nome" style="padding: 0 12px;" [(ngModel)]="credentials.nome"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-input type="text" label="Email: " placeholder="credentials.email" style="padding: 0 12px;" [(ngModel)]="credentials.email"></ion-input> 
+        </ion-item>
       </ion-list>
+      
         <div class="largura">
-          <ion-button expand="round" label="Input with placeholder" class="shadow-red" color="primary">gravar dados</ion-button>
+          <ion-button expand="round" label="Input with placeholder" class="shadow-red" color="primary" (click)="updateCredentials()">gravar dados</ion-button>
       </div>  
 
     
