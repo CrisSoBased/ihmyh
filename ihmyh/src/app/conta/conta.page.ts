@@ -34,4 +34,8 @@ export class ContaPage {
       alert('Dados atualizados com sucesso!');
     }
   }
+
+  logout() {
+    this.navCtrl.navigateRoot('/home');
+  }
 }

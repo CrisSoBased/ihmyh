@@ -5,27 +5,28 @@
   <div id="logo"></div>
 
   <div id="corpo">
-      <h2>Conta</h2>
-      <ion-list>
-        <ion-item>
-          <ion-input type="text" label="Nome:" placeholder="credentials.nome" style="padding: 0 12px;" [(ngModel)]="credentials.nome"></ion-input>
-        </ion-item>
-        
-        <ion-item>
-          <ion-input type="text" label="Email: " placeholder="credentials.email" style="padding: 0 12px;" [(ngModel)]="credentials.email"></ion-input> 
-        </ion-item>
-      </ion-list>
+    <h2>Conta</h2>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" label="Nome:" placeholder="credentials.nome" style="padding: 0 12px;" [(ngModel)]="credentials.nome"></ion-input>
+      </ion-item>
       
-        <div class="largura">
-          <ion-button expand="round" label="Input with placeholder" class="shadow-red" color="primary" (click)="updateCredentials()">gravar dados</ion-button>
-      </div>  
+      <ion-item>
+        <ion-input type="text" label="Email: " placeholder="credentials.email" style="padding: 0 12px;" [(ngModel)]="credentials.email"></ion-input> 
+      </ion-item>
+    </ion-list>
 
-    
-      <div class="largura" style="margin-top:20px">
-        
-          <div class="direita"><a href="recuperar">Recuperar Password</a></div>
-        </div> 
+    <div class="largura">
+      <ion-button expand="round" label="Input with placeholder" class="shadow-red" color="primary" (click)="updateCredentials()">gravar dados</ion-button>
+    </div>  
 
+    <div class="largura" style="margin-top:20px">
+      <div class="direita"><a href="recuperar">Recuperar Password</a></div>
+    </div> 
+
+    <div class="largura" style="margin-top:20px">
+      <ion-button expand="round" label="Input with placeholder" class="shadow-red" color="primary" (click)="logout()">Logout</ion-button>
+    </div>
   </div>
 
   <div id="rodape">
