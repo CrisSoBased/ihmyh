@@ -1,5 +1,5 @@
 import { Component, Injectable } from '@angular/core';
-
+import { CarrinhoService } from 'src/app/carrinho/carrinho.service';
 @Injectable({
   providedIn: 'root',
 })
@@ -10,22 +10,5 @@ import { Component, Injectable } from '@angular/core';
   styleUrls: ['desejados.page.scss'],
 })
 export class DesejadosPage {
-  public data = [
-    'rosa',
-    'cravo',
-    'girassol',
-    'margarida',
-    'tulipa',
-    'orquidia',
-    
-  ];
-  public results = [...this.data];
-
-  handleInput(event: Event) {
-    const query = (event.target as HTMLInputElement).value.toLowerCase();
-    this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
-  }
-
-  constructor() {}
-
+ 
 }

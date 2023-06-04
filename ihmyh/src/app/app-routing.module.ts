@@ -117,6 +117,10 @@ const routes: Routes = [
     path: 'conta',
     loadChildren: () => import('./conta/conta.module').then( m => m.ContaPageModule)
   },
+  {
+    path: 'final',
+    loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
+  },
 
 ];
 

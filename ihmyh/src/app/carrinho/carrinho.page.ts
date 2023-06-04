@@ -9,14 +9,36 @@ import { ToastController } from '@ionic/angular';
 })
 export class CarrinhoPage implements OnInit {
   carrinhoItems: any[] = [];
+  indexs: string[] = []; // Adicione essa linha para criar o array indexs
+  
 
-  constructor(public carrinhoService: CarrinhoService,
-    private toastController: ToastController) {}
+  constructor(
+    public carrinhoService: CarrinhoService,
+    private toastController: ToastController
+  ) {}
 
   ngOnInit() {
-    this.carrinhoItems = this.carrinhoService.getCarrinho();
+    const nomesFlores = ["rosa", "cravo", "orquidea", "margarida", "girassol", "tulipa"];
+  
+    this.carrinhoItems = this.carrinhoService.getCarrinho().map((item: any) => {
+      const nomeFlor = this.removerAcentos(item.nome.toLowerCase());
+      const index = nomesFlores.findIndex(flor => flor === nomeFlor);
+      const foto = index !== -1 ? `../assets/images/Screenshot_${encodeURIComponent(nomesFlores[index])}.png` : '';
+  
+      return {
+        ...item,
+        foto: foto
+      };
+    });
+  
     console.log('Itens do carrinho:', this.carrinhoItems);
   }
+  
+  removerAcentos(str: string): string {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  
+  
 
   // Função para exibir a mensagem de compra efetuada
   async exibirMensagemCompraEfetuada() {
