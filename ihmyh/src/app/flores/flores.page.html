@@ -1,35 +1,72 @@
 <div id="fundo">
-  <div id="menu"></div>
   <div id="logo">
     <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+  </div>
+
+  <div id="menu">
+    <ion-button expand="full" class="filtro-button" (click)="toggleFilters()">Filtros</ion-button>
+  </div>  
+
+  <div class="largura" *ngIf="showFilters">
+    <div id="filtros-container">
+      <ion-label class="filtro-label">Cores:</ion-label>
+      <div id="cor-filters">
+        <ion-button
+          *ngFor="let cor of getUniqueColors()"
+          [class.active]="corSelecionada === cor"
+          (click)="corSelecionada = cor; filtrar()"
+        >
+          {{ cor }}
+        </ion-button>
+      </div>
+
+      <div id="preco-range">
+        <ion-label class="preco-label">Preço mínimo: {{ precoMinimo }}</ion-label>
+        <ion-range min="0" max="20" step="1" [(ngModel)]="precoMinimo" (ionChange)="filtrar()"></ion-range>
+      </div>
+
+      <div id="preco-range">
+        <ion-label class="preco-label">Preço máximo: {{ precoMaximo }}</ion-label>
+        <ion-range min="0" max="20" step="1" [(ngModel)]="precoMaximo" (ionChange)="filtrar()"></ion-range>
+      </div>
+
+      <div id="voltar-container">
+        <ion-button color="primary" (click)="resetFilters()">Voltar Atrás</ion-button>
+      </div>
+    </div>
   </div>
 
   <div id="corpo" class="esp" style="--ion-background-color: none !important;">
     <ion-content>
       <ion-list>
+        
         <ion-item *ngFor="let item of filteredFlores; let index = index;">
           <ion-grid>
             <ion-row>
-              <ion-col size="3">
+              <ion-col size="4">
                 <ion-img [src]="filteredIndexs[index]"></ion-img>
               </ion-col>
               <ion-col size="6">
                 <ion-label class="nome-flor">{{ item?.nome }}</ion-label>
-              </ion-col>
-              <ion-col size="3">
-                <ion-button expand="large" color="primary" class="meu-botao" (click)="adicionarAoCarrinho(item)">Adicionar</ion-button>
+                <ion-label class="preco-flor">Preço: {{ item?.preco }}</ion-label>
+                <ion-item class="custom-quantidade-item">
+                  <ion-input type="number" [(ngModel)]="item.quantidade" placeholder="Quantidade" (focus)="onInputFocus(item)" (blur)="onInputBlur(item)"></ion-input>
+                </ion-item>
+                <ion-button expand="large" color="primary" class="meu-botao botao-direita" (click)="adicionarAoCarrinho(item)">Adicionar</ion-button>
               </ion-col>
             </ion-row>
           </ion-grid>
-        </ion-item>        
+        </ion-item>
+        
+        
+        
+                     
       </ion-list>
       <ion-infinite-scroll>
         <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
       </ion-infinite-scroll>
     </ion-content>
   </div>
-
-  <div class="largura"></div>
 
   <div id="rodape">
     <table style="width: 100%; margin-left: auto; margin-right: auto;" border="0" cellspacing="0" cellpadding="0">
@@ -51,22 +88,10 @@
             </a>
           </td>
           <td style="width: 20%; text-align: center;">
-            <a href="informate">
-              <img src="../assets/images/info.png" alt="" width="80" height="80">
-            </a>
-          </td>
-          <td style="width: 20%; text-align: center;">
-            <a href="conta">
+            <a href="perfil">
               <img src="../assets/images/user.png" alt="" width="80" height="80">
             </a>
           </td>
-        </tr>
-        <tr>
-          <td style="width: 20%; text-align: center;">cesto</td>
-          <td style="width: 20%; text-align: center;">contacto</td>
-          <td style="width: 20%; text-align: center;">Início</td>
-          <td style="width: 20%; text-align: center;">Info</td>
-          <td style="width: 20%; text-align: center;">Perfil</td>
         </tr>
       </tbody>
     </table>

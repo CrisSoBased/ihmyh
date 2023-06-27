@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FloresService {
-  private flores: any[] = [
-    { nome: 'Rosa', preco: 10 },
-    { nome: 'Cravo', preco: 8 },
-    { nome: 'Orquídea', preco: 15 },
-    { nome: 'Margarida', preco: 7 },
-    { nome: 'Girassol', preco: 9 },
-    { nome: 'Tulipa', preco: 12 },
-  ];
+  private floresUrl = 'assets/flores.json';
 
-  getFlores() {
-    return this.flores;
+  getFlores(): Observable<any[]> {
+    return new Observable<any[]>(observer => {
+      fetch(this.floresUrl)
+        .then(response => response.json())
+        .then(data => {
+          observer.next(data);
+          observer.complete();
+        })
+        .catch(error => {
+          observer.error(error);
+        });
+    });
   }
 }

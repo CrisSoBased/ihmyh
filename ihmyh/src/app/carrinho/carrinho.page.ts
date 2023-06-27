@@ -51,14 +51,14 @@ export class CarrinhoPage implements OnInit {
   }
 
   contarQuantidade(item: any): number {
-    let quantidade = 0;
-    for (const carrinhoItem of this.carrinhoService.getCarrinho()) {
-      if (carrinhoItem.nome === item.nome) {
-        quantidade++;
-      }
+    const carrinhoItem = this.carrinhoService.getCarrinho().find(carrinhoItem => carrinhoItem.nome === item.nome);
+  
+    if (carrinhoItem) {
+      return carrinhoItem.quantidade;
     }
-    return quantidade;
-  }
+  
+    return 0;
+  }  
 
   limparCarrinho() {
     if (confirm('Tem certeza de que deseja limpar o carrinho?')) {

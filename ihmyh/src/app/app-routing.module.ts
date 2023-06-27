@@ -55,6 +55,27 @@ const routes: Routes = [
     loadChildren: () => import('./produtos/produtos.module').then(m => m.ProdutosPageModule)
   },
   {
+    path: 'contactos',
+    loadChildren: () => import('./contactos/contactos.module').then( m => m.ContactosPageModule)
+  },
+  {
+    path: 'conta',
+    loadChildren: () => import('./conta/conta.module').then( m => m.ContaPageModule)
+  },
+  {
+    path: 'final',
+    loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
+  },
+  {
+    path: 'home-flores',
+    loadChildren: () => import('./home-flores/home-flores.module').then( m => m.HomeFloresPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home-flores',
+    pathMatch: 'full'
+  },
+  {
     path: '',
     redirectTo: 'recuperar',
     pathMatch: 'full'
@@ -109,18 +130,8 @@ const routes: Routes = [
     redirectTo: 'informate',
     pathMatch: 'full'
   },
-  {
-    path: 'contactos',
-    loadChildren: () => import('./contactos/contactos.module').then( m => m.ContactosPageModule)
-  },
-  {
-    path: 'conta',
-    loadChildren: () => import('./conta/conta.module').then( m => m.ContaPageModule)
-  },
-  {
-    path: 'final',
-    loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
-  },
+
+
 
 ];
 

@@ -1,0 +1,8 @@
+[
+  { "nome": "Rosa", "preco": 10, "cor": "vermelha" },
+  { "nome": "Cravo", "preco": 8, "cor": "vermelha" },
+  { "nome": "Orquídea", "preco": 15, "cor": "roxa" },
+  { "nome": "Margarida", "preco": 7, "cor": "branca" },
+  { "nome": "Girassol", "preco": 9, "cor": "amarela" },
+  { "nome": "Tulipa", "preco": 12, "cor": "vermelha" }
+]

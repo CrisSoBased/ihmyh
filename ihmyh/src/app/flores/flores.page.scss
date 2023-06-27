@@ -17,6 +17,7 @@
   #corpo{
       height: 60%;
       position: relative;
+      margin-top: 20px;
       display: block;
   }
   #corpo h2{
@@ -144,4 +145,33 @@
         margin-left: -75px;
         margin-top: 31px;
       }
+      .preco-label{
+        color: black;
+      }
+      .filtro-label{
+        color: black;
+      }
+      .filtro-button {
+      width: 100px;
+      margin-top: -15px;
+      margin-left: 150px;
+      }
+      .preco-flor{
+        color: black;
+        margin-left: 15px;
+      }
+      .botao-direita {
+        margin-left: 130px;
+        margin-top: -30px;
+      }
+      .custom-quantidade-item{
+        width: 250px;
+        margin-left: -20px;
+        height: 100px;
+        color: #333;
+      }
+      
+      
+      
+      
       
