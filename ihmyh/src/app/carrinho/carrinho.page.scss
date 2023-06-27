@@ -133,6 +133,8 @@
         font-size: 25px;
         margin-top: 10px;
         margin-left: 15px;
+        width: 250px;
+        height: 35px;
       }      
 
       .preco-total-carrinho {
@@ -146,6 +148,9 @@
         margin-top: 10px;
         margin-left: 15px;
         font-size: 40px;
+        width: 350px;
+        height: 50px;
+        border: 5px;
       }
 
       .mensagem-vazio{
@@ -166,8 +171,53 @@
       .label-item {
         background-color: white;
         color: black;
-        border-bottom: 1px solid whitesmoke;
-        padding-bottom: 0px; /* Ajuste o valor conforme necessário */
+        border-bottom: 5px solid whitesmoke;
+        padding-bottom: 0px; 
       }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .input-container {
+        margin-top: 50px;
+      }
+
+      .custom-input {
+        color: white;
+        background-color: rgb(63, 63, 63);
+        border-radius: 15px;
+        border: 1px solid white;
+        padding: 10px;
+        font-size: 20px;
+        width: 52px;
+        height: 40px;
+        margin-top: -30px;
+        margin-left: 112px;
+      }
+      .custom-col{
+        margin-top: 10px;
+      }
+      .custom-label {
+        font-size: 30px;
+      }
+      .quantidade-total-item {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      .nome-produto {
+        font-size: 20px; /* Tamanho do texto do nome do produto */
+      }
+      
+      .preco-produto {
+        color: black;
+        margin-top: 10px;
+        font-size: 20px; /* Tamanho do texto do preço do produto */
+      }
+      
+      
       
       

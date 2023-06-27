@@ -1,0 +1,74 @@
+<div id="fundo">
+  <div id="menu"></div>
+  <div id="logo"></div>
+
+  <div id="corpo">
+    <h2 class="titulo-forma-pagamento">Forma de Pagamento</h2>
+
+    <ion-radio-group [(ngModel)]="formaPagamento">
+      <ion-item>
+        <ion-label>MBWay</ion-label>
+        <ion-radio value="mbway"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Referência Multibanco</ion-label>
+        <ion-radio value="referenciaMultibanco"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <div *ngIf="formaPagamento === 'mbway'">
+      <h3 class="titulo-mbway">Pagamento via MBWay</h3>
+      <ion-item>
+        <ion-label>Número de Telemóvel:</ion-label>
+        <ion-input type="text" [(ngModel)]="numeroTelemovel" maxlength="9"></ion-input>
+      </ion-item>
+    </div>
+
+    <div *ngIf="formaPagamento === 'referenciaMultibanco'">
+      <h3 class="titulo-referencia-multibanco"></h3>
+      <!-- Adicione aqui os campos e lógica relacionados ao pagamento por referência multibanco -->
+    </div>
+
+    <button (click)="confirmarPagamento()" class="botao-finalizar-compra">Confirmar Pagamento</button>
+  </div>
+
+  <div id="rodape"></div>
+  <table style="width: 100%; margin-left: auto; margin-right: auto;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td style="width: 20%; text-align: center;">
+          <a href="carrinho">
+            <img src="../assets/images/cesto.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="contactos">
+            <img src="../assets/images/contacto.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="produtos">
+            <img src="../assets/images/home.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="informate">
+            <img src="../assets/images/info.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="conta">
+            <img src="../assets/images/user.png" alt="" width="80" height="80">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 20%; text-align: center;">cesto</td>
+        <td style="width: 20%; text-align: center;">contacto</td>
+        <td style="width: 20%; text-align: center;">Início</td>
+        <td style="width: 20%; text-align: center;">Info</td>
+        <td style="width: 20%; text-align: center;">Perfil</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

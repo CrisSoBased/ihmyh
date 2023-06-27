@@ -129,7 +129,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'informate',
     pathMatch: 'full'
+  },  {
+    path: 'entrega',
+    loadChildren: () => import('./entrega/entrega.module').then( m => m.EntregaPageModule)
   },
+  {
+    path: 'pagamento',
+    loadChildren: () => import('./pagamento/pagamento.module').then( m => m.PagamentoPageModule)
+  },
+
 
 
 

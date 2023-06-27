@@ -8,34 +8,40 @@
     <ng-container *ngIf="carrinhoService.getCarrinho().length === 0; else carrinhoItems">
       <p class="mensagem-vazio">Carrinho vazio</p>
     </ng-container>
-
     <ng-template #carrinhoItems>
       <ion-list class="scroll-labels">
         <ion-list>
-          <ion-item *ngFor="let item of carrinhoService.getItensUnicos()">
-            <ion-grid>
-              <ion-row>
-                <ion-col size="2">
-                  <ion-img [src]="item.foto"></ion-img>
-                </ion-col>
-                <ion-col>
-                  <ion-label class="label-item">
-                    Nome: {{ item.nome }} - Preço Total: {{ calcularPrecoTotal(item) }}€
-                    <div class="quantidade-total-item">
-                      Quantidade:
-                      <button class="botao-quantidade" (click)="diminuirQuantidade(item)">-</button>
-                      {{ contarQuantidade(item) }}x
-                      <button class="botao-quantidade" (click)="aumentarQuantidade(item)">+</button>
-                    </div>
-                  </ion-label>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-item>
-          
+          <ng-container *ngFor="let item of carrinhoService.getItensUnicos()">
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="4">
+                    <ion-img [src]="'assets/images/Screenshot_' + removerAcentos(item.nome.toLowerCase()) + '.png'"></ion-img>
+                  </ion-col>
+                  <ion-col>
+                    <ion-label class="label-item custom-label">
+                      <h3 class="nome-produto">{{ item.nome }}</h3>
+                      <p class="preco-produto">Preço Total: {{ calcularPrecoTotal(item) }}€</p>
+                      <div class="quantidade-total-item">
+                        Quantidade:
+                        <ion-input type="number" [ngModel]="item.novaQuantidade" (ngModelChange)="item.novaQuantidade = $event" class="custom-input"></ion-input>
+                      </div>
+                    </ion-label>                                                                              
+                  </ion-col>
+                  <ion-col class="ion-justify-content-start">
+                  </ion-col>
+                  <ion-col class="custom-col">
+                    <ion-button (click)="alterarQuantidade(item)">Alterar Quantidade</ion-button>
+                    <ion-button (click)="removerProduto(item)">Remover</ion-button>
+                  </ion-col>                                  
+                </ion-row>
+              </ion-grid>
+            </ion-item>            
+          </ng-container>
         </ion-list>                   
       </ion-list>
     </ng-template>
+    
 
     <button *ngIf="carrinhoService.getCarrinho().length > 0" (click)="limparCarrinho()" class="botao-limpar-carrinho">Limpar Carrinho</button>
 

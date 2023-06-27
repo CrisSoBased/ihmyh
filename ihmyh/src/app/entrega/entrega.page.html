@@ -1,0 +1,78 @@
+<div id="fundo">
+  <div id="menu"></div>
+  <div id="logo"></div>
+
+  <div id="corpo">
+    <h2 class="titulo-forma-entrega">Forma de Entrega</h2>
+
+
+    <ion-radio-group [(ngModel)]="formaEntrega">
+      <ion-item>
+        <ion-label>Em Loja</ion-label>
+        <ion-radio value="emLoja"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Entrega em Morada</ion-label>
+        <ion-radio value="entregaMorada"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <div *ngIf="formaEntrega === 'entregaMorada'">
+      <h3 class = "titulo-morada">Introduza os dados da morada:</h3>
+      <ion-item>
+        <ion-label>Endereço:</ion-label>
+        <ion-input type="text" [(ngModel)]="endereco"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Código Postal:</ion-label>
+        <ion-input type="text" [(ngModel)]="codigoPostal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cidade:</ion-label>
+        <ion-input type="text" [(ngModel)]="cidade"></ion-input>
+      </ion-item>
+    </div>
+
+    <button (click)="confirmarEntrega()" class="botao-finalizar-compra">Confirmar Entrega</button>
+  </div>
+
+  <div id="rodape"></div>
+  <table style="width: 100%; margin-left: auto; margin-right: auto;" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td style="width: 20%; text-align: center;">
+          <a href="carrinho">
+            <img src="../assets/images/cesto.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="contactos">
+            <img src="../assets/images/contacto.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="produtos">
+            <img src="../assets/images/home.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="informate">
+            <img src="../assets/images/info.png" alt="" width="80" height="80">
+          </a>
+        </td>
+        <td style="width: 20%; text-align: center;">
+          <a href="conta">
+            <img src="../assets/images/user.png" alt="" width="80" height="80">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 20%; text-align: center;">cesto</td>
+        <td style="width: 20%; text-align: center;">contacto</td>
+        <td style="width: 20%; text-align: center;">Início</td>
+        <td style="width: 20%; text-align: center;">Info</td>
+        <td style="width: 20%; text-align: center;">Perfil</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

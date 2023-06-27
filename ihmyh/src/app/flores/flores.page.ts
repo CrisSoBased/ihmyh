@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from 'src/app/carrinho/carrinho.service';
 import { FloresService } from 'src/app/flores/flores.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'flores-home',
@@ -9,7 +10,7 @@ import { FloresService } from 'src/app/flores/flores.service';
 })
 export class FloresPage implements OnInit {
   items: string[] = [];
-  iss: string[] = ['rosa', 'cravo', 'orquidia', 'margarida', 'girassol', 'tulipa'];
+  iss: string[] = ['rosa', 'cravo', 'orquidea', 'margarida', 'girassol', 'tulipa'];
   indexs: string[] = [];
   flores: any[] = [];
   carrinhoItens: string[] = [];
@@ -24,7 +25,8 @@ export class FloresPage implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private floresService: FloresService
+    private floresService: FloresService,
+    private toastController: ToastController
   ) {}
 
   ngOnInit() {
@@ -56,19 +58,37 @@ export class FloresPage implements OnInit {
     }
   }
 
+  async exibirMensagemItemAdicionado(item: any) {
+    const toast = await this.toastController.create({
+      message: item.nome + ' Adicionada!',
+      duration: 2000,
+      position: 'bottom' 
+    });
+    toast.present();
+  }
+  
+  
   adicionarAoCarrinho(item: any) {
     const carrinhoItem = this.carrinhoService.getCarrinho().find(carrinhoItem => carrinhoItem.nome === item.nome);
-  
+    
     if (carrinhoItem) {
-      carrinhoItem.quantidade += (item.quantidade || 1);
+      // Se o item já estiver no carrinho, definir o valor inicial do input como a quantidade atual do item
+      carrinhoItem.novaQuantidade += (item.novaQuantidade || 1); // Adicione a quantidade do item ao carrinhoItem existente
     } else {
+      // Se o item não estiver no carrinho, definir o valor inicial do input como 0 ou a quantidade desejada inicialmente
+      item.novaQuantidade = item.quantidade; // ou a quantidade desejada inicialmente
       item.quantidade = item.quantidade || 1;
-      this.carrinhoService.adicionarItem(item);
+      this.carrinhoService.adicionarItem(item); // Adicione o item ao carrinho
     }
-  
+    
     console.log('Planta adicionada ao carrinho:', item);
     this.filteredIndexs.push(item.foto);
+    this.exibirMensagemItemAdicionado(item);
+  
+    // Atualize o carrinho no serviço após a modificação
+    this.carrinhoService.atualizarCarrinho(this.carrinhoService.getCarrinho());
   }  
+   
 
   handleInput(event: any) {
     const searchTerm = event.target.value.toLowerCase();
