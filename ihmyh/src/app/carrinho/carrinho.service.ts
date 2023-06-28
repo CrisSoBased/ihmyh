@@ -7,6 +7,7 @@ export class CarrinhoService {
   private storageKey = 'carrinhoItens'; // Chave para o localStorage
 
   itens: any[] = [];
+  carrinhoItems: any[] = [];
 
   constructor() {
     this.carregarItensDoLocalStorage(); // Carrega os itens do localStorage ao inicializar o serviço
@@ -93,5 +94,12 @@ export class CarrinhoService {
   aumentarQuantidade(item: any) {
     item.quantidade++;
     this.atualizarCarrinho(this.itens);
+  }
+
+  atualizarQuantidadeItem(item: any) {
+    const index = this.carrinhoItems.findIndex(carrinhoItem => carrinhoItem.nome === item.nome);
+    if (index !== -1) {
+      this.carrinhoItems[index].quantidade = item.quantidade;
+    }
   }
 }

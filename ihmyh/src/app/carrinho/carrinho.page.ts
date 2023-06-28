@@ -24,7 +24,7 @@ export class CarrinhoPage implements OnInit {
     this.carrinhoItems = this.carrinhoService.getCarrinho().map((item: any) => {
       const nomeFlor = this.removerAcentos(item.nome.toLowerCase());
       const foto = `../assets/images/Screenshot_${nomeFlor}.png`;
-  
+
       return {
         ...item,
         foto: foto
@@ -68,12 +68,19 @@ export class CarrinhoPage implements OnInit {
   }
   
   alterarQuantidade(item: any) {
-    const quantidade = parseInt(item.novaQuantidade, 10);
+    if (!isNaN(item.quantidade)) {
+      item.novaQuantidade = item.quantidade;
   
-      item.quantidade = quantidade;
-      item.novaQuantidade = quantidade.toString();
-      this.atualizarCarrinho();
-  }  
+      // Atualize a quantidade do item diretamente no carrinho
+      const index = this.carrinhoItems.findIndex(carrinhoItem => carrinhoItem.nome === item.nome);
+      if (index !== -1) {
+        this.carrinhoItems[index].quantidade = item.quantidade;
+      }
+  
+      console.log('Quantidade do item atualizada:', item);
+      this.atualizarCarrinho(); // Atualize o carrinho localmente
+    }
+  }   
   
   removerProduto(item: any) {
     const index = this.carrinhoItems.findIndex((carrinhoItem) => carrinhoItem.nome === item.nome);
