@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
   },
   plugins: {
     ScreenOrientation: {
-      orientations: ['portrait'],
+      default: 'portrait',
     },
   },
 };

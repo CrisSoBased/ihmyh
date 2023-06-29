@@ -1,0 +1,45 @@
+{
+    "appId": "io.ionic.starter",
+    "appName": "ihmyh",
+    "bundledWebRuntime": false,
+    "webDir": "www",
+    "plugins": {
+      "SplashScreen": {
+        "launchShowDuration": 0
+      },
+      "StatusBar": {
+        "style": "light"
+      },
+      "ScreenOrientation": {
+        "default": "portrait"
+      }
+    },
+    "cordova": {},
+    "server": {
+      "androidScheme": "https"
+    },
+    "cordovaPlugins": [],
+    "cordovaPlatforms": [],
+    "npmClient": "npm",
+    "web": {
+      "favicon": "assets/favicon.png",
+      "backgroundColor": "#ffffff",
+      "ios": {
+        "supportsTablet": true
+      },
+      "android": {
+        "package": "com.example.app",
+        "themeColors": {
+          "primary": "#3e50cd",
+          "secondary": "#32db64",
+          "danger": "#f53d3d",
+          "success": "#2dd36f",
+          "warning": "#ffc409",
+          "dark": "#222428",
+          "medium": "#92949c",
+          "light": "#f4f5f8"
+        }
+      }
+    }
+  }
+  
