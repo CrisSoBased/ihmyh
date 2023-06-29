@@ -9,7 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "clean": "rmdir /s /q www && rmdir /s /q android && rmdir /s /q ios && rmdir /s /q .android && rmdir /s /q .ios"
   },
   "private": true,
   "dependencies": {
@@ -23,10 +24,12 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@capacitor/android": "^5.0.5",
     "@capacitor/app": "5.0.2",
     "@capacitor/core": "5.0.4",
     "@capacitor/haptics": "5.0.2",
     "@capacitor/keyboard": "5.0.2",
+    "@capacitor/screen-orientation": "^5.0.4",
     "@capacitor/status-bar": "5.0.2",
     "@ionic/angular": "^7.0.0",
     "ionicons": "^7.0.0",
